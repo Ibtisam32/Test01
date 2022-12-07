@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+    @State var pikedThems: AppTheme=.random
+    let colors: [Color]= [.blue, .blue]
+    enum AppTheme{
+        case light
+        case dark
+        case random
     }
+    var body: some View {
+        ZStack {
+            switch.pikedThems{
+            case .light
+                    .ignoresSafeArea
+            case .dark
+                    .ignoresSafeArea
+            case .random
+                    .ignoresSafeArea
+            }
+            
 }
 
 struct ContentView_Previews: PreviewProvider {
